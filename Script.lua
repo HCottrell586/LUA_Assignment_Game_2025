@@ -223,16 +223,45 @@ end
 
 
 --function 1 located in creature.cpp and LuaHelper.cpp
-
+function MoveUp(speedVal,PositionY)
+	if (PositionY > 0)
+	then
+		PositionY = PositionY - speedVal
+	end
+	return PositionY
+end
 
 --function 2 located in creature.cpp and LuaHelper.cpp
-
+function MoveDown(height,speedVal,PositionY)
+	if (PositionY + height + speedVal <= 1080)
+	then
+		PositionY = PositionY + speedVal
+	end
+	return PositionY
+end
 
 --function 3 located in PlayerCharacter.cpp
+function IncreaseScoreAndLives(m_Lives,m_Score)
 
+m_Score = m_Score + enemyPointValue
+if (m_Score % ScoreMultipleToGetBonus == 0)
+then
+	if(m_Lives < MaxLives)
+	then
+		m_Lives = m_Lives + 1
+	else
+		m_Score = m_Score + (enemyPointValue*ScoreMultiplier)
+	end
+end
+return m_Lives, m_Score
+end
 
 --function 4 located in PlayerCharacter.cpp
-
+function ResetScore(m_LastScore,m_Score)
+m_LastScore=m_Score
+m_Score=0
+return m_LastScore, m_Score
+end
 
 
 --[[*****************************************PART 3 OF ASSIGNMENT TASK************************************************************

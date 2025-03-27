@@ -142,12 +142,12 @@ void Creature::Up(float speedVal, float& currPos)
         //**********************Part 2***************************
         //comment this if statement to use the lua function******
         //*******************************************************
-        if (PositionY > 0)
-        PositionY -= speedVal;
+        //if (PositionY > 0)
+        //PositionY -= speedVal;
         //*******************************************************
         
         //Uncomment this to use the lua function
-        //CallLuaMoveUp(L, "MoveUp", speedVal, PositionY);
+        CallLuaMoveUp(L, "MoveUp", speedVal, PositionY);
     }
     else
     {
@@ -165,12 +165,12 @@ void Creature::Down(float speedVal, float currPos)
         //*******************Part 2******************************
         //comment this if statement to use the lua function******
         //*******************************************************
-        if (PositionY + height + speedVal <= 1080)
-        PositionY += speedVal;
+        //if (PositionY + height + speedVal <= 1080)
+        //PositionY += speedVal;
         //*******************************************************
 
         //Uncomment this to use the lua function
-        //CallLuaMoveDown(L, "MoveDown", height, speedVal, PositionY);
+        CallLuaMoveDown(L, "MoveDown", height, speedVal, PositionY);
     }
     else
     {
