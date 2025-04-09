@@ -313,3 +313,17 @@ Each C++ function you adapt into this script will get you 12.5%
 If your attempt breaks the game, comment out the attempt and get the game back to a working state 
 to avoid the capping penalty. I'll take a look and give an appropriate mark based on how far off I thought you were
 **********************************************************************************************************************************]]
+function DecreaseLives()
+	CDispatcher("DecreaseLives")
+end
+-- called in PlayerCharacter.cpp line 89,112,136,159
+-- added the dispacher to PlayerCharacter.h and Init in PlayerCharacter.cpp
+-- called in PlayGame.cpp line 324,345
+-- all references to DecreaseLives() are called through lua
+
+function MuteGameMusic()
+	CDispatcher("MuteMusic")
+end
+-- called in PlayGame.cpp line 142
+-- added the dispacher to Audio.h and Init in Audio.cpp
+-- when the player presses M to mute the game music, it is now called through lua

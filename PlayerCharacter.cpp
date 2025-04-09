@@ -13,6 +13,11 @@ Derives from Creature base class
 PlayerCharacter::PlayerCharacter(Level* lev, int speed, Game* game, Audio* GA)
 	: Creature(lev, speed,game)
 {   
+
+
+    disp.Init(L);
+    Init(disp);
+
     //constants******************************
     MaxLives = LuaGetInt(L, "MaxLives");
     InitialLives = LuaGetInt(L, "InitialLives");
@@ -29,7 +34,7 @@ PlayerCharacter::PlayerCharacter(Level* lev, int speed, Game* game, Audio* GA)
 
 PlayerCharacter::~PlayerCharacter()
 {
-    
+
 }
 
 int PlayerCharacter::GetLives()
@@ -81,7 +86,8 @@ void PlayerCharacter::Left(int Audioindex, float volume, float speedVal, float c
              DeathPosX = PositionX;
              DeathPosY = PositionY;
              p_GameAudio->PlaySfx(1, 0.5);//play death sound 
-             DecreaseLives();//lose a life
+             CallVoidVoidFunc(L, "DecreaseLives");
+             //DecreaseLives();//lose a life
              ResetPosition(0, StartPosY);//set back to start
              SetIsDead(true);            
          }        
@@ -103,7 +109,8 @@ void PlayerCharacter::Right(int Audioindex, float volume, float speedVal, float 
             DeathPosX = PositionX;
             DeathPosY = PositionY;
             p_GameAudio->PlaySfx(1, 0.5);//play death sound 
-            DecreaseLives();//lose a life
+            CallVoidVoidFunc(L, "DecreaseLives");
+            //DecreaseLives();//lose a life
             ResetPosition(0, StartPosY);//set back to start
             SetIsDead(true);            
         }        
@@ -125,7 +132,9 @@ void PlayerCharacter::Up(float speedVal, float currPos)
             DeathPosX = PositionX;
             DeathPosY = PositionY;
             p_GameAudio->PlaySfx(1, 0.5);//play death sound 
-            DecreaseLives();//lose a life
+
+            CallVoidVoidFunc(L, "DecreaseLives");
+            //DecreaseLives();//lose a life
             ResetPosition(0, StartPosY);//set back to start
             SetIsDead(true);            
         }
@@ -147,7 +156,8 @@ void PlayerCharacter::Down(float speedVal, float currPos)
             DeathPosX = PositionX;
             DeathPosY = PositionY;
             p_GameAudio->PlaySfx(1, 0.5);;//play death sound 
-            DecreaseLives();//lose a life
+            CallVoidVoidFunc(L, "DecreaseLives");
+            //DecreaseLives();//lose a life
             ResetPosition(0, StartPosY);//set back to start
             SetIsDead(true);            
         }

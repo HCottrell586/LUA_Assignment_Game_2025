@@ -17,6 +17,8 @@ class Audio
 private:
 	//pointers
 	lua_State* L;
+
+	Dispatcher disp;
 	//constants for lua****************************************
 	int MaxSamples;
 	int MaxMusicTracks;
@@ -35,5 +37,11 @@ public:
 	void StopMusic();
 	bool GetIsMuted();
 	void MuteMusic();
+
+	void Init(Dispatcher& disp)
+	{
+		Dispatcher::Command::voidvoidfunc f{ [this](void) {return MuteMusic(); } };
+		disp.Register("MuteMusic", Dispatcher::Command{ f });
+	}
 };
 

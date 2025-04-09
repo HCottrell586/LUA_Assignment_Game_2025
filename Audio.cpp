@@ -17,6 +17,9 @@ Audio::Audio()
 	if (!LuaOK(L, luaL_dofile(L, "Script.lua")))
 		assert(false);
 
+	disp.Init(L);
+	Init(disp);
+
 	m_IsMuted = false;
 	if (!al_install_audio())
 	{

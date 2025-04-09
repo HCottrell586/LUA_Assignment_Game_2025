@@ -18,6 +18,9 @@ private:
     //pointers    
     Audio* p_GameAudio = NULL;
 
+
+    Dispatcher disp;
+
     //constants for lua*************************************
     int MaxLives;//the maximum number of lives possible
     int InitialLives;//the starting lives number
@@ -54,5 +57,15 @@ public:
     bool GetInvncible();
     int GetScore();
     int GetLives();
+
+
+
+    void Init(Dispatcher& disp)
+    {
+        Dispatcher::Command::voidvoidfunc f{ [this](void) {return DecreaseLives(); } };
+        disp.Register("DecreaseLives", Dispatcher::Command{ f });
+    }
+
+
 };
 

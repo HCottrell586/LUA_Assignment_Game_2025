@@ -138,7 +138,8 @@ E_GameStates PlayGame::Update(float Delta, Game* game, Input* input)
     {
         if (!p_GameAudio->GetIsMuted())
         {
-            p_GameAudio->MuteMusic();;
+            //p_GameAudio->MuteMusic();
+            CallVoidVoidFunc(L, "MuteGameMusic");
         }
     }
     if (input->key_is_pressed(KEY_ENTER))
@@ -320,7 +321,8 @@ E_GameStates PlayGame::Update(float Delta, Game* game, Input* input)
                     p_Player->SetIsDead(true);//set the player as dead
                     p_Player->SetDeathPos();//record where the player died so the explosion is in the right place                        
                     p_GameAudio->PlaySfx(1, 0.5);//play death sound 
-                    p_Player->DecreaseLives();//lose a life                       
+                    //p_Player->DecreaseLives();//lose a life    
+                    CallVoidVoidFunc(L, "DecreaseLives");
                     p_Player->ResetPosition(0, p_Player->GetStarPosY());//set back to start 
                     p_enemies[index]->SetExploding();
                     p_enemies[index]->SetDeathPos();
@@ -340,7 +342,8 @@ E_GameStates PlayGame::Update(float Delta, Game* game, Input* input)
                         p_Player->SetIsDead(true);//set the player as dead
                         p_Player->SetDeathPos();//record where the player died so the explosion is in the right place                                                                         
                         p_GameAudio->PlaySfx(1, 0.5);//play death sound 
-                        p_Player->DecreaseLives();//lose a life                                
+                        //p_Player->DecreaseLives();//lose a life   
+                        CallVoidVoidFunc(L, "DecreaseLives");
                         p_Player->ResetPosition(0, p_Player->GetStarPosY());//set back to start    
                     }
                 }
