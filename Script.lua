@@ -294,10 +294,14 @@ end
 --**********************************************************************************************
 
 --C++ function call 1 in Level.cpp lines 41, 183 and PlayGame.cpp line 262
-
+function BuildLevel()
+	CDispatcher("BuildNewLevel")
+end
 
 --C++ function call 2 in PlayGame.cpp line 261
-
+function ResetEverything()
+	CDispatcher("ResetAll",startingLevel)
+end
 
 --[[*****************************************PART 4 OF ASSIGNMENT TASK***********************************************************
 Create up to 2 more C++ function calls yourself.
