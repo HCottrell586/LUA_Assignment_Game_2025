@@ -64,12 +64,12 @@ Doing this could result in the above penalty if the game stops working...
 --PlayGame class constants x 20 ********************************************************************************************
 --[[18]]invincibilityTime = 5.0 --filled out for you
 --[[19]]MaximumLevels = 4 --filled out for you
---[[20 make at least 50 enemies (or count the max number in all the levels)]]maximumPooledEnemies=50
---[[21]]timeBetweenShots=0.5
+--[[20 make at least 50 enemies (or count the max number in all the levels)]]maximumPooledEnemies=1
+--[[21]]timeBetweenShots=0.3
 --[[22]]MaximumPooledPlayerShots=10
 --[[23]]MaximumPooledEnemyShots=2
---[[24 gets the game scrolling]]SceneScrollAmmount=150
---[[25]]DistanceFromEndLevelExit=100
+--[[24 gets the game scrolling]]SceneScrollAmmount=175
+--[[25]]DistanceFromEndLevelExit=200
 
 --[[26 bullet variant 1]]PlayerBulletSprite = "assets/laser player.png"
 --[[27 bullet variant 2]]EnemyBulletSprite = "assets/laser enemy.png"
