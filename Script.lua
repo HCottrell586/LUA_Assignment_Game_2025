@@ -51,7 +51,7 @@ Doing this could result in the above penalty if the game stops working...
 --[[11]]ButtonTextColour = {r = 100, g = 100, b = 100}
 
 --[[12]]MenuClearColour = {r = 200, g = 200, b = 200}
---[[13]]GameOverClearColour = {r = 200, g = 100, b = 100}
+--[[13]]GameOverClearColour = {r = 10, g = 10, b = 10}
 
 --Menu class constants x 4 *************************************************************************************************
 --[[14]]buttonName = "assets/buttonLong_grey.png"
@@ -65,7 +65,7 @@ Doing this could result in the above penalty if the game stops working...
 --[[18]]invincibilityTime = 5.0 --filled out for you
 --[[19]]MaximumLevels = 4 --filled out for you
 --[[20 make at least 50 enemies (or count the max number in all the levels)]]maximumPooledEnemies=50
---[[21]]timeBetweenShots=0.2
+--[[21]]timeBetweenShots=0.5
 --[[22]]MaximumPooledPlayerShots=10
 --[[23]]MaximumPooledEnemyShots=2
 --[[24 gets the game scrolling]]SceneScrollAmmount=150
@@ -90,14 +90,14 @@ Doing this could result in the above penalty if the game stops working...
 
 --Game over class constants x 4 *******************************************************************************************
 --[[38]]GameOverTimeLimit = 5.0 --filled out for you
---[[39]]GameOverTextColour = {r = 150, g = 79, b = 255} --filled out for you
---[[40]]GameOverMessagePosition = {x = 400, y = 830}
+--[[39]]GameOverTextColour = {r = 250, g = 10, b = 10} --filled out for you
+--[[40]]GameOverMessagePosition = {x = width/2, y = height/2}
 --[[41]]GameOverMessage = "Game Over"
 
 --Hud class constants x 7 *************************************************************************************************
---[[42]]smallTextSize=10
---[[43]]mediumTextSize=15
---[[44]]largeTextSize=30
+--[[42]]smallTextSize=25
+--[[43]]mediumTextSize=40
+--[[44]]largeTextSize=50
 
 --[[45 font 1]]fontName1 = "assets/gomarice_g_type.ttf"
 --[[46 font 2]]fontName2 = "assets/DejaVuSans.ttf"
@@ -151,7 +151,7 @@ i = "assets/regularExplosion08.png"
 --[[58 how much are enemies worth]]enemyPointValue=50
 
 --Projectile class constants x 1 ********************************************************************************************
---[[59 how fast should bullets be?]]bulletSpeed=10
+--[[59 how fast should bullets be?]]bulletSpeed=3
 
 --Level class constants x 6 (correctly filling out the table here is worth 5 points)****************************************
 
@@ -182,7 +182,7 @@ f = "assets/spaceBuilding_012.png"
 --Audio class constants x 5 *************************************************************************************************
 --[[66]]maximumSFX = 4 --filled out for you
 --[[67]]maxMusicTracks = 3 --filled out for you
---[[68]]musicGain = 0.25 --filled out for you. a value between 0 and 1
+--[[68]]musicGain = 0.20 --filled out for you. a value between 0 and 1
 
 --The table keys should use letters NOT numbers (i.e. a = "assets/anasset.png")
 --[[69]]musicTracks = {a = "assets/Sad Descent.ogg", b = "assets/Space Cadet.ogg", c = "assets/Time Driving.ogg"} --filled out for you
